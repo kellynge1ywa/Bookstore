@@ -2,4 +2,4 @@
 
 UserController userController = new UserController();
 
-await userController.init();
+await userController.Init();

@@ -13,12 +13,32 @@ public class UserService : Iuser
     public UserService (){
         _client = new HttpClient();
     }
+
+    public  async Task<User> Login(string username , string password)
+    { 
+
+         var response = await _client.GetAsync(_URL+"?"+$"username={username}");
+         var content = await response.Content.ReadAsStringAsync();
+         List<User> users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(content);
+         bool isMatch =false;
+         if(users!=null){
+            isMatch = true;
+         }else{
+            Console.WriteLine ("User Does Not Exist");
+         }
+         
+        Console.WriteLine(isMatch ? "Log in Successfully" : "Invalid Credentials") ;
+
+        return users[0];
+
+    }
+
     public async Task<string> Register(User newUser)
     {
         var content = Newtonsoft.Json.JsonConvert.SerializeObject(newUser);
         var body = new StringContent(content ,Encoding.UTF8 ,"application/json");
         var response = await _client.PostAsync(_URL , body);
 
-        return response.IsSuccessStatusCode ? "Registration Succesfull": "";
+        return response.IsSuccessStatusCode ? "Registration Succesfull": "Registration Failed";
     }
 }

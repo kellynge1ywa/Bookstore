@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6DgOLm2Ra9TDVNHHq3uy/AzicgQlNmc+viy82bpd55ARKJzWV/m6PThMah4lUGojUkPH/AJh4kklJmTJt/K1gQ==",
+  "dgSpecHash": "oVt8sMAb7LIdTMvZsAzKgJ9D/gRyLLUjBSeZ3K6k/Bxcd3A+ZEJ/9mIgktM3Pb5Qqz6iEPCf4qzttVAHzIwPqA==",
   "success": true,
-  "projectFilePath": "d:\\Teach2give\\assignments\\Bookstore\\Bookstore.csproj",
+  "projectFilePath": "C:\\Users\\Mophat\\OneDrive - Teach2Give\\Desktop\\Bookstore\\Bookstore.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\KELLY\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\Mophat\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }
