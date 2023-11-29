@@ -1,0 +1,17 @@
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.AssemblyInfoInputs.cache
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.AssemblyInfo.cs
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.csproj.CoreCompileInputs.cache
+D:\Teach2give\assignments\Bookstore\bin\Debug\net8.0\Bookstore.exe
+D:\Teach2give\assignments\Bookstore\bin\Debug\net8.0\Bookstore.deps.json
+D:\Teach2give\assignments\Bookstore\bin\Debug\net8.0\Bookstore.runtimeconfig.json
+D:\Teach2give\assignments\Bookstore\bin\Debug\net8.0\Bookstore.dll
+D:\Teach2give\assignments\Bookstore\bin\Debug\net8.0\Bookstore.pdb
+D:\Teach2give\assignments\Bookstore\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.csproj.AssemblyReference.cache
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.csproj.CopyComplete
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.dll
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\refint\Bookstore.dll
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.pdb
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\Bookstore.genruntimeconfig.cache
+D:\Teach2give\assignments\Bookstore\obj\Debug\net8.0\ref\Bookstore.dll
