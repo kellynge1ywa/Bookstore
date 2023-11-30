@@ -4,6 +4,7 @@ public class UserController
 {
 
     UserService userService = new UserService();
+    OrderController orderController = new OrderController();
 
     public async Task  Init (){
         Console.WriteLine("Choose an Option : \n 1.Register \n 2.Login \n 3.Exit ");
@@ -96,6 +97,25 @@ public class UserController
             //logic for users page
             Console.WriteLine("Welcome! , Kindly choose a book to purchase based on the ID");
             await LoggedInUserUi();
+            var bookId = Console.ReadLine();
+            int userId = 0;
+            List<User> users = await userService.GetUsers();
+
+            for (int i = 0; i < users.Count; i++)
+            {
+
+                if(users[i].username == username){
+                    userId=i+1;
+                }
+            
+            }
+             // Create an Order instance 
+            Order order = new Order(){userId=userId.ToString() , bookId = bookId};
+
+
+            // Create the order
+            await orderController.CreatOrderRequest(order);
+
          }
 
     } 
@@ -113,6 +133,8 @@ public class UserController
            BookController bookController = new BookController();
            await bookController.GetBooksUI();
     }
+
+
 
 
 }

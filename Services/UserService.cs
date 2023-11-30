@@ -41,4 +41,13 @@ public class UserService : Iuser
 
         return response.IsSuccessStatusCode ? "Registration Succesfull": "Registration Failed";
     }
+    public async Task<List<User>> GetUsers (){
+
+         var response = await _client.GetAsync(_URL);
+         var content = await response.Content.ReadAsStringAsync();
+         List<User> users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(content); 
+
+         return users;
+
+    }
 }
