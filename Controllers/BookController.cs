@@ -13,11 +13,15 @@ public class BookController
         Console.WriteLine("Enter Book Description");
         string description = Console.ReadLine();
         /// validation handled here .
-        Book newBook = new Book(){name=name,description=description};
-        
-         // Add the new book
+        if(name!=null || name !="" && description!=null || description !="" ){
 
+        Book newBook = new Book(){name=name,description=description};
          await  AddBookRequest(newBook);
+        }else{
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Provide all the Required fields");
+        }
+        
     }
 
     // Book addition logic

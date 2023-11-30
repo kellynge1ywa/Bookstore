@@ -16,7 +16,9 @@ public class UserService : Iuser
 
     public  async Task<User> Login(string username , string password)
     { 
-
+             
+             try
+             {
          var response = await _client.GetAsync(_URL+"?"+$"username={username}");
          var content = await response.Content.ReadAsStringAsync();
          List<User> users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(content);
@@ -30,11 +32,18 @@ public class UserService : Iuser
         Console.WriteLine(isMatch ? "Log in Successfully" : "Invalid Credentials") ;
 
         return users[0];
+             }
+             catch (Exception e)
+             {
+                
+                throw ;
+             }
 
     }
 
     public async Task<string> Register(User newUser)
     {
+        
         var content = Newtonsoft.Json.JsonConvert.SerializeObject(newUser);
         var body = new StringContent(content ,Encoding.UTF8 ,"application/json");
         var response = await _client.PostAsync(_URL , body);
@@ -43,11 +52,23 @@ public class UserService : Iuser
     }
     public async Task<List<User>> GetUsers (){
 
+
+         try
+         {
+
          var response = await _client.GetAsync(_URL);
          var content = await response.Content.ReadAsStringAsync();
          List<User> users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(content); 
 
          return users;
 
+            
+         }
+         catch (System.Exception)
+         {
+            
+            throw;
+         }
+        
     }
 }

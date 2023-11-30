@@ -13,14 +13,31 @@ public class BookService : Ibook
     }
     public async Task<string> AddBook(Book newBook)
     {
+
+
+        try
+        {
+            
         var content = Newtonsoft.Json.JsonConvert.SerializeObject(newBook);
         var body = new StringContent(content,Encoding.UTF8,"application/json");
+        Console.WriteLine(body.ToString);
         var response = await _client.PostAsync(_URL,body);
         return response.IsSuccessStatusCode ? "Book was Added Successfully" : "Book addition failed";
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
+        }
     }
 
     public async Task<List<Book>> GetBooks()
-    {   var response = await _client.GetAsync(_URL);
+    {  
+
+       try
+       {
+        
+        var response = await _client.GetAsync(_URL);
         var content = await response.Content.ReadAsStringAsync();
         List<Book> books = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Book>>(content);
         foreach (var book in books)
@@ -28,5 +45,13 @@ public class BookService : Ibook
             Console.WriteLine(book.name);
         }
         return books;
+       }
+       catch (System.Exception)
+       {
+        
+        throw;
+       }
+    
+    
     }
 }
