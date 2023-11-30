@@ -25,7 +25,17 @@ public class BookController
 
         string response  = await bookService.AddBook(newBook);
 
-       Console.WriteLine(response);
+        Console.WriteLine(response);
     } 
+
+    public async Task GetBooksUI (){
+        List<Book> books = await bookService.GetBooks();
+        Console.WriteLine($"Book ID\t\tBook Title\t\tBook Description");
+        for (int i = 0; i < books.Count; i++)
+        {
+            Console.WriteLine($"{i+1}\t\t{books[i].name}\t\t{books[i].description}\n");
+            
+        }
+    }
 
 }

@@ -45,6 +45,11 @@ public class UserController
         Console.WriteLine("Enter Your Password");
         string password = Console.ReadLine();
         /// validation handled here .
+          if(username == "" || password == ""){
+
+             Console.WriteLine("Usrename or Password cannot be empty");
+
+        }
 
         User newUser = new User (){username=username , password=password};
 
@@ -74,19 +79,23 @@ public class UserController
         Console.WriteLine("Enter Your Password");
         string password = Console.ReadLine();
         /// validation handled here .
+        if(username == "" || password == ""){
 
+             Console.WriteLine("Usrename or Password cannot be empty");
 
+        }
          // register the user 
          User loggedInUser = await LoginUserRequest(username , password);
          Console.WriteLine(loggedInUser.isAdmin);
          if(loggedInUser.isAdmin){
-
-            // Logic for admins page 
-            BookController bookController = new BookController();
+           // Logic for admins page 
+           BookController bookController = new BookController();
            await  bookController.AddBookUi();
             
          }else{
             //logic for users page
+            Console.WriteLine("Welcome! , Kindly choose a book to purchase based on the ID");
+            await LoggedInUserUi();
          }
 
     } 
@@ -98,6 +107,12 @@ public class UserController
 
        return loggedInUser;
     } 
+
+    public async Task LoggedInUserUi (){
+
+           BookController bookController = new BookController();
+           await bookController.GetBooksUI();
+    }
 
 
 }
